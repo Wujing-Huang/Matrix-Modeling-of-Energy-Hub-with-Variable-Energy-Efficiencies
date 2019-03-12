@@ -1,0 +1,74 @@
+% Node Type Library 
+% Energy Number£º#1 power£¬#2 cooling£¬#3 heat£¬#4 gas
+% Node Information:
+#1 WARG
+% heat2cooling
+Input: heat
+Output: cooling
+Adjustability: N
+Storage: N
+
+#2 CHP_ECO
+% extraction condensing operation
+Input: gas
+Output: power heat
+Adjustability: Y
+Storage: N
+
+#3 CHP_BPO
+% back pressure operartion 
+Input: gas
+Output: power heat
+Adjustability: N
+Storage: N
+
+#4 P2G device
+% power2gas
+Input: power
+Output: gas
+Adjustability: N
+Storage: N
+
+#5 AB 
+% auxiliary boiler
+Input: gas
+Output: heat
+Adjustability: N
+Storage: N
+
+#6 CERG
+% power2cooling
+Input: power
+Output: cooling
+Adjustability: N
+Storage: N
+
+#7 EHP
+% electric heat pump
+Input: power
+Output: heat
+Adjustability: N
+Storage: N
+
+#8 CS
+% cooling storage
+Input: cooling
+Output: cooling cooling
+Adjustability: N
+Storage: Y
+
+#9 HS
+% heat storage
+Input: heat
+Output: heat heat
+Adjustability: N
+Storage: Y
+
+#10 ES
+% electricity storage
+Input: power
+Output: power power
+Adjustability: N
+Storage: Y
+
+%end

@@ -1,0 +1,20 @@
+ehc = caseN10B13_Lin;
+data_EGY2228;
+formNTI;
+load_raw = demand_intermediate';
+demand(1, :) = load_raw(3, :);
+demand(2, :) = load_raw(1, :);
+demand(3, :) = load_raw(2, :);
+price = prices_intermediate' / 1000;
+capacity = ones(2, 24) * 10000;
+probability = 1 / 365;
+tic;
+[v, vin, S, objective] = runehopf( ehc, demand, price, capacity, probability );
+toc;
+
+v0 = value(v);
+vin0 = value(vin);
+S0 = value(S);
+save('v0', 'v0');
+save('vin0', 'vin0');
+save('S0', 'S0');
